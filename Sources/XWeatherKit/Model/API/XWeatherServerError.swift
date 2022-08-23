@@ -10,7 +10,7 @@ import Foundation
 
 public enum XWeatherServerError: Error {
     case makeURLRqeusetError
-    case decodeJSONDataToUTF8StringError
+    case decodingDataToUTF8StringError
     case noResponseData
 }
 
@@ -20,8 +20,8 @@ extension XWeatherServerError: LocalizedError  {
         switch self {
         case .makeURLRqeusetError:
             return "make URLRequest error"
-        case .decodeJSONDataToUTF8StringError:
-            return "decode JSON data to utf8 string error"
+        case .decodingDataToUTF8StringError:
+            return "decoding data to utf8 string error"
         case .noResponseData:
             return "no response data"
         }
@@ -32,8 +32,8 @@ extension XWeatherServerError: LocalizedError  {
         switch self {
         case .makeURLRqeusetError:
             return "make URLRequest error"
-        case .decodeJSONDataToUTF8StringError:
-            return "decode JSON data to utf8 string error"
+        case .decodingDataToUTF8StringError:
+            return "decoding data to utf8 string error"
         case .noResponseData:
             return "no response data"
         }

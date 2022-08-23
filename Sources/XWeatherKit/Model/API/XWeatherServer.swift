@@ -139,7 +139,7 @@ extension XWeatherServer {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            completion(.failure(XWeatherServerError.decodeJSONDataToUTF8StringError))
+                            completion(.failure(XWeatherServerError.decodingDataToUTF8StringError))
                         }
                     }
                 } else {
@@ -190,7 +190,13 @@ extension XWeatherServer {
                 .eraseToAnyPublisher()
         } else if Action.Response.self == String.self {
             return publisher
-                .map { return (String(data: $0, encoding: .utf8) ?? "data is nil") as! Action.Response}
+                .tryMap{ data in
+                    if let string = String(data: data, encoding: .utf8) {
+                        return string as! Action.Response
+                    } else {
+                        throw XWeatherServerError.decodingDataToUTF8StringError
+                    }
+                }
                 .mapError { error in
                     error
                 }
@@ -226,7 +232,7 @@ extension XWeatherServer {
                 if let jsonString = String(data: data, encoding: .utf8) {
                     return .success(jsonString as! Action.Response)
                 } else {
-                    return .failure(XWeatherServerError.decodeJSONDataToUTF8StringError)
+                    return .failure(XWeatherServerError.decodingDataToUTF8StringError)
                 }
             } else {
                 let model = try JSONDecoder().decode(Action.Response.self, from: data)
@@ -270,7 +276,7 @@ extension XWeatherServer {
                             if let jsonString = String(data: data, encoding: .utf8) {
                                 observer(.success(jsonString as! Action.Response))
                             } else {
-                                observer(.failure(XWeatherServerError.decodeJSONDataToUTF8StringError))
+                                observer(.failure(XWeatherServerError.decodingDataToUTF8StringError))
                             }
                         } else {
                             let model = try JSONDecoder().decode(Action.Response.self, from: data)
