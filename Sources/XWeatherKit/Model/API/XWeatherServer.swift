@@ -296,7 +296,11 @@ extension XWeatherServer {
     }
     
     fileprivate static func debugInfo<Action: XWeatherServerAction>(action: Action, data: Data?, urlResponse: URLResponse?) {
-        print("###SHAPIServer DEBUG info start###")
+        print("###APIServer DEBUG info start###")
+        print("urlResponse:")
+        if let urlResponse = urlResponse {
+            print(urlResponse)
+        }
         print("parameters:")
         print(action.parameters?.toDictionary() ?? [String: Any]())
         print("response data:")
@@ -305,6 +309,6 @@ extension XWeatherServer {
         } else {
             print("data is nil")
         }
-        print("###SHAPIServer DEBUG info end###")
+        print("###APIServer DEBUG info end###")
     }
 }
