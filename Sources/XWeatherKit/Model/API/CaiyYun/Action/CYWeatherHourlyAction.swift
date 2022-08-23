@@ -13,7 +13,7 @@ public struct CYWeatherHourlyAction: CYWeatherAction {
     public typealias Response = CYWeatherHourlyResponse
     
     public var host: String { cyweatherHost }
-    public var uri: String { "/\(parameters!.token)/\(parameters!.longitude),\(parameters!.latitude)/hourly" }
+    public var path: String { "/\(parameters!.token)/\(parameters!.longitude),\(parameters!.latitude)/hourly" }
     public var parameters: Parameters?
     public var responseType = Response.self
 

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import struct Alamofire.HTTPMethod
 
 public struct CYWeatherParameters: XWeatherServerParameters {
     public enum Unit: String, XWeatherServerParameters {

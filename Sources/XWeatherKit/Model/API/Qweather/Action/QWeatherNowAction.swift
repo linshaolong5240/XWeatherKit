@@ -28,7 +28,7 @@ public struct QWeatherNowAction: QWeatherAction {
     public typealias Response = QWWeatherNowResponse
     
     public var host: String { qweatherHost }
-    public var uri: String { "/v7/weather/now" }
+    public var path: String { "/v7/weather/now" }
     public var parameters: Parameters?
     public var responseType = Response.self
     

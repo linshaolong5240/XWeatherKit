@@ -15,10 +15,8 @@
 		445A4C4928985C5F00A75DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445A4C3628985C5F00A75DAA /* Assets.xcassets */; };
 		445A4C5628985CB200A75DAA /* XWeatherKit in Frameworks */ = {isa = PBXBuildFile; productRef = 445A4C5528985CB200A75DAA /* XWeatherKit */; };
 		445A4C5828985DF700A75DAA /* XWeatherKit in Frameworks */ = {isa = PBXBuildFile; productRef = 445A4C5728985DF700A75DAA /* XWeatherKit */; };
-		445A4C5D28985F8F00A75DAA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 445A4C5C28985F8F00A75DAA /* RxSwift */; };
 		445A4C5F289860BC00A75DAA /* DEBUGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A4C5E289860BC00A75DAA /* DEBUGData.swift */; };
 		445A4C60289860BC00A75DAA /* DEBUGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A4C5E289860BC00A75DAA /* DEBUGData.swift */; };
-		445A4C62289866A600A75DAA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 445A4C61289866A600A75DAA /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445A4C5D28985F8F00A75DAA /* RxSwift in Frameworks */,
 				445A4C5828985DF700A75DAA /* XWeatherKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445A4C62289866A600A75DAA /* RxSwift in Frameworks */,
 				445A4C5628985CB200A75DAA /* XWeatherKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +122,6 @@
 			name = "XWeatherKitDemo (iOS)";
 			packageProductDependencies = (
 				445A4C5728985DF700A75DAA /* XWeatherKit */,
-				445A4C5C28985F8F00A75DAA /* RxSwift */,
 			);
 			productName = "XWeatherKitDemo (iOS)";
 			productReference = 445A4C3B28985C5F00A75DAA /* XWeatherKitDemo.app */;
@@ -147,7 +142,6 @@
 			name = "XWeatherKitDemo (macOS)";
 			packageProductDependencies = (
 				445A4C5528985CB200A75DAA /* XWeatherKit */,
-				445A4C61289866A600A75DAA /* RxSwift */,
 			);
 			productName = "XWeatherKitDemo (macOS)";
 			productReference = 445A4C4128985C5F00A75DAA /* XWeatherKitDemo.app */;
@@ -182,7 +176,6 @@
 			);
 			mainGroup = 445A4C2E28985C5E00A75DAA;
 			packageReferences = (
-				445A4C5928985F8F00A75DAA /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 445A4C3C28985C5F00A75DAA /* Products */;
 			projectDirPath = "";
@@ -497,17 +490,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		445A4C5928985F8F00A75DAA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		445A4C5528985CB200A75DAA /* XWeatherKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -516,16 +498,6 @@
 		445A4C5728985DF700A75DAA /* XWeatherKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = XWeatherKit;
-		};
-		445A4C5C28985F8F00A75DAA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 445A4C5928985F8F00A75DAA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		445A4C61289866A600A75DAA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 445A4C5928985F8F00A75DAA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

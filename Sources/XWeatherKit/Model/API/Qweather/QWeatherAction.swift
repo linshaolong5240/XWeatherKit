@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import struct Alamofire.HTTPMethod
 
 public enum QWeatherUnit: String {
     case metric = "m"

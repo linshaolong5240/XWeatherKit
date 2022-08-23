@@ -28,7 +28,7 @@ public struct QWeatherTopCititesAction: QWeatherAction {
     public typealias Response = QWeatherTopCititesResponse
     
     public var host: String { geoHost }
-    public var uri: String { "/v2/city/top" }
+    public var path: String { "/v2/city/top" }
     public var parameters: Parameters?
     public var responseType = Response.self
     

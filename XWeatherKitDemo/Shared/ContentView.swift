@@ -8,13 +8,12 @@
 
 import SwiftUI
 import Combine
-import RxSwift
 import XWeatherKit
 
 
 class ViewModel: ObservableObject {
     var cancells = Set<AnyCancellable>()
-    var disposeBag = DisposeBag()
+//    var disposeBag = DisposeBag()
     let location = XWDEBUGData.location
 //    var weatherAction: CYWeatherNowAction {
 //        CYWeatherNowAction(parameters: .init(token: token, longitude: location.longitude, latitude: location.latitude, alert: true))
