@@ -84,7 +84,9 @@ extension XWeatherServer {
         guard let url: URL = URL(string: action.url), var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return nil
         }
-        urlComponents.queryItems = XWURLQueryItemEncoding.default.encode(parameters: action.parameters?.toDictionary())
+        if action.method == .get {
+            urlComponents.queryItems = XWURLQueryItemEncoding.default.encode(parameters: action.parameters?.toDictionary())
+        }
         //        if let headers = action.httpHeaders {
         //            defaultHttpHeader.merge(headers) { current, new in
         //                new
