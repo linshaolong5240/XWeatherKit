@@ -31,7 +31,7 @@ public struct QWeatherSearchCityAction: QWeatherAction {
     public typealias Response = QWeatherSearchCityResponse
     
     public var host: String { geoHost }
-    public var path: String { "/v2/city/lookup" }
+    public var uri: String { "/v2/city/lookup" }
     public var parameters: Parameters?
     public var responseType = Response.self
 

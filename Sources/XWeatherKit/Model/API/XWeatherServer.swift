@@ -48,7 +48,7 @@ public protocol XWeatherServerAction {
     
     var method: XWHTTPMethod { get }
     var host: String { get }
-    var path: String { get }
+    var uri: String { get }
     var url: String { get }
     var httpHeaders: [String: String]? { get }
     var timeoutInterval: TimeInterval { get }
@@ -58,8 +58,8 @@ public protocol XWeatherServerAction {
 
 public extension XWeatherServerAction {
     var method: XWHTTPMethod { .get }
-    var path: String { "/" }
-    var url: String { host + path }
+    var uri: String { "/" }
+    var url: String { host + uri }
     var httpHeaders: [String: String]? { ["Content-Type": "application/json"] }
     var timeoutInterval: TimeInterval { 20 }
     var parameters: XWeatherServerEmptyParameters? { nil }
