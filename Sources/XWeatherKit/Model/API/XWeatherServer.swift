@@ -136,7 +136,9 @@ extension XWeatherServer {
                             completion(.success(jsonString as! Action.Response))
                         }
                     } else {
-                        throw XWeatherServerError.decodeJSONDataToUTF8StringError
+                        DispatchQueue.main.async {
+                            completion(.failure(XWeatherServerError.decodeJSONDataToUTF8StringError))
+                        }
                     }
                 } else {
                     let model = try JSONDecoder().decode(Action.Response.self, from: data)
